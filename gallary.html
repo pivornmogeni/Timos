@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - TIMO'S Makeup & Nails Spa</title>
+    <meta name="description" content="Explore our portfolio of beautiful work at TIMO'S Spa. See our makeup artistry, nail designs, and client transformations.">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="https://i.pinimg.com/564x/8c/65/2a/8c652a0c8a5e5e4c5f6b9c3e8d7a9c1b.jpg" alt="TIMO'S Logo">
+                <span>TIMO'S</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="gallery.html" class="nav-link active">Gallery</a></li>
+                <li><a href="testimonials.html" class="nav-link">Reviews</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="booking.html" class="nav-link book-now-btn">Book Now</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="header-background">
+            <img src="https://i.pinimg.com/564x/4f/5a/6b/4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b9c.jpg" alt="Gallery Background">
+            <div class="header-overlay"></div>
+        </div>
+        <div class="header-content">
+            <h1>Our Gallery</h1>
+            <p>Witness the artistry and transformations that make us Eldoret's premier beauty destination</p>
+        </div>
+    </section>
+
+    <!-- Gallery Filter -->
+    <section class="gallery-filter">
+        <div class="container">
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All Work</button>
+                <button class="filter-btn" data-filter="makeup">Makeup</button>
+                <button class="filter-btn" data-filter="nails">Nails</button>
+                <button class="filter-btn" data-filter="hair">Hair</button>
+                <button class="filter-btn" data-filter="skincare">Skincare</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Grid -->
+    <section class="gallery-grid">
+        <div class="container">
+            <div class="gallery-masonry">
+                <!-- Makeup Portfolio -->
+                <div class="gallery-item makeup" data-category="makeup">
+                    <img src="https://i.pinimg.com/564x/8e/9f/0a/8e9f0a1b2c3d4e5f6a7b8c9d0e1f2a3b.jpg" alt="Bridal Makeup">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h3>Bridal Makeup</h3>
+                            <p>Elegant bridal look with classic styling</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item makeup" data-category="makeup">
+                    <img src="https://i.pinimg.com/564x/1c/2d/3e/1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e6f.jpg" alt="Glamour Makeup">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h3>Glamour Makeup</h3>
+                            <p>Bold and beautiful evening glamour</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item makeup" data-category="makeup">
+                    <img src="https://i.pinimg.com/564x/6a/7b/8c/6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d.jpg" alt="Natural Makeup">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h3>Natural Makeup</h3>
+                            <p>Everyday natural beauty enhancement</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item makeup" data-category="makeup">
+                    <img src="https://i.pinimg.com/564x/3e/4f/5a/3e4f5a6b7c8d9e0f1a2b3c4d5e6f7a8b.jpg" alt="Editorial Makeup">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h3>Editorial Makeup</h3>
+                            <p>Creative photoshoot makeup artistry</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Nail Art Portfolio -->
+                <div class="gallery-item nails" data-category="nails">
+                    <img src="https://i.pinimg.com/564x/9d/0e/1f/9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f4a.jpg" alt="Nail Art Design">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h3>Intricate Nail Art</h3>
+                            <p>Hand-painted floral nail designs</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item nails" data-category="nails">
+                    <img src="https://i.pinimg.com/564x/7f/8a/9b/7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c.jpg" alt="Acrylic Nails">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h3>Acrylic Extensions</h3>
+                            <p>Perfect length and shape with glossy finish</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item nails" data-category="nails">
+                    <img src="https://i.pinimg.com/564x/4c/5d/6e/4c5d6e7f8a9b0c1d2e3f4a5b6c7d8e9f.jpg" alt="French Manicure">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h3>Classic French Manicure</h3>
+                            <p>Timeless elegance in nail care</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item nails" data-category="nails">
+                    <img src="https://i.pinimg.com/564x/0b/1c/2d/0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5e.jpg" alt="Gel Nails">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h3>Gel Nail Art</h3>
+                            <p>Durable and stunning gel designs</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hair Styling Portfolio -->
+                <div class="gallery-item hair" data-category="hair">
+                    <img src="https://i.pinimg.com/564x/5e/6f/7a/5e6f7a8b9c0d1e2f3a4b5c6d7e8f9a0b.jpg" alt="Box Braids">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h3>Box Braids</h3>
+                            <p>Protective styling with perfect tension</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item hair" data-category="hair">
+                    <img src="https://i.pinimg.com/564x/2a/3b/4c/2a3b4c5d6e7f8a9b0c1d2e3f4a5b6c7d.jpg" alt="Cornrows">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h3>Cornrow Styles</h3>
+                            <p>Intricate cornrow patterns and designs</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item hair" data-category="hair">
+                    <img src="https://i.pinimg.com/564x/8c/9d/0e/8c9d0e1f2a3b4c5d6e7f8a9b0c1d2e3f.jpg" alt="Dreadlocks">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h3>Dreadlock Installation</h3>
+                            <p>Professional loc installation and maintenance</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item hair" data-category="hair">
+                    <img src="https://i.pinimg.com/564x/6b/7c/8d/6b7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e.jpg" alt="Twist Braids">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h3>Senegalese Twists</h3>
+                            <p>Beautiful twist braids for natural hair</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skincare Portfolio -->
+                <div class="gallery-item skincare" data-category="skincare">
+                    <img src="https://i.pinimg.com/564x/9a/0b/1c/9a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d.jpg" alt="Before After Facial">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h3>Facial Treatment Results</h3>
+                            <p>Dramatic improvement in skin texture and glow</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item skincare" data-category="skincare">
+                    <img src="https://i.pinimg.com/564x/4e/5f/6a/4e5f6a7b8c9d0e1f2a3b4c5d6e7f8a9b.jpg" alt="Eyebrow Waxing">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h3>Eyebrow Shaping</h3>
+                            <p>Perfect eyebrow sculpting and waxing</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="gallery-item skincare" data-category="skincare">
+                    <img src="https://i.pinimg.com/564x/1d/2e/3f/1d2e3f4a5b6c7d8e9f0a1b2c3d4e5f6a.jpg" alt="Spa Treatment">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h3>Relaxing Spa Treatment</h3>
+                            <p>Luxurious facial and relaxation experience</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Spa Environment -->
+                <div class="gallery-item all" data-category="all">
+                    <img src="https://i.pinimg.com/564x/7c/8d/9e/7c8d9e0f1a2b3c4d5e6f7a8b9c0d1e2f.jpg" alt="Spa Interior">
+                    <div class="gallery-overlay">
+                        <div class="gallery-info">
+                            <h3

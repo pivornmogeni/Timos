@@ -127,6 +127,29 @@ document.addEventListener('DOMContentLoaded', function() {
             this.reset();
         });
     }
+    
+    // Services category filtering
+    const categoryButtons = document.querySelectorAll('.category-btn');
+    const serviceDetails = document.querySelectorAll('.service-detail');
+    
+    categoryButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const category = button.dataset.category;
+            
+            // Update active button
+            categoryButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+            
+            // Filter services
+            serviceDetails.forEach(service => {
+                if (category === 'all' || service.classList.contains(category)) {
+                    service.style.display = 'flex';
+                } else {
+                    service.style.display = 'none';
+                }
+            });
+        });
+    });
 });
 
 // Email validation function
@@ -231,4 +254,233 @@ document.addEventListener('DOMContentLoaded', () => {
 function openLightbox(src, alt) {
     const lightbox = document.createElement('div');
     lightbox.className = 'lightbox';
-    lightbox.innerHTML =
+    lightbox.innerHTML = `
+        <div class="lightbox-content">
+            <img src="${src}" alt="${alt}">
+            <div class="lightbox-controls">
+                <button class="lightbox-close">&times;</button>
+            </div>
+        </div>
+    `;
+    
+    // Add styles
+    lightbox.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    `;
+    
+    const content = lightbox.querySelector('.lightbox-content');
+    content.style.cssText = `
+        max-width: 90%;
+        max-height: 90%;
+        position: relative;
+    `;
+    
+    const img = lightbox.querySelector('img');
+    img.style.cssText = `
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        border-radius: 8px;
+    `;
+    
+    const controls = lightbox.querySelector('.lightbox-controls');
+    controls.style.cssText = `
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    `;
+    
+    const closeBtn = lightbox.querySelector('.lightbox-close');
+    closeBtn.style.cssText = `
+        background: rgba(255, 255, 255, 0.2);
+        border: none;
+        color: white;
+        font-size: 2rem;
+        padding: 0.5rem;
+        border-radius: 50%;
+        cursor: pointer;
+        backdrop-filter: blur(10px);
+        transition: background 0.3s ease;
+    `;
+    
+    // Add to page
+    document.body.appendChild(lightbox);
+    
+    // Animate in
+    setTimeout(() => {
+        lightbox.style.opacity = '1';
+    }, 10);
+    
+    // Close functionality
+    closeBtn.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) {
+            closeLightbox();
+        }
+    });
+    
+    // Keyboard close
+    document.addEventListener('keydown', function escapeHandler(e) {
+        if (e.key === 'Escape') {
+            closeLightbox();
+            document.removeEventListener('keydown', escapeHandler);
+        }
+    });
+    
+    function closeLightbox() {
+        lightbox.style.opacity = '0';
+        setTimeout(() => {
+            if (lightbox.parentNode) {
+                lightbox.parentNode.removeChild(lightbox);
+            }
+        }, 300);
+    }
+}
+
+// Testimonials carousel
+function initTestimonialsCarousel() {
+    const carousel = document.querySelector('.testimonials-carousel');
+    if (!carousel) return;
+    
+    const testimonials = carousel.querySelectorAll('.testimonial-card');
+    const prevBtn = carousel.querySelector('.carousel-prev');
+    const nextBtn = carousel.querySelector('.carousel-next');
+    
+    let currentIndex = 0;
+    
+    function showTestimonial(index) {
+        testimonials.forEach((testimonial, i) => {
+            testimonial.style.display = i === index ? 'block' : 'none';
+        });
+    }
+    
+    function nextTestimonial() {
+        currentIndex = (currentIndex + 1) % testimonials.length;
+        showTestimonial(currentIndex);
+    }
+    
+    function prevTestimonial() {
+        currentIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
+        showTestimonial(currentIndex);
+    }
+    
+    if (prevBtn) prevBtn.addEventListener('click', prevTestimonial);
+    if (nextBtn) nextBtn.addEventListener('click', nextTestimonial);
+    
+    // Auto-rotate testimonials
+    setInterval(nextTestimonial, 5000);
+    
+    // Initialize
+    showTestimonial(0);
+}
+
+// Initialize when DOM is loaded
+document.addEventListener('DOMContentLoaded', initTestimonialsCarousel);
+
+// Scroll to top functionality
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
+
+// Add scroll to top button
+document.addEventListener('DOMContentLoaded', () => {
+    const scrollToTopBtn = document.createElement('button');
+    scrollToTopBtn.innerHTML = '<i class="fas fa-arrow-up"></i>';
+    scrollToTopBtn.className = 'scroll-to-top';
+    scrollToTopBtn.style.cssText = `
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: var(--primary-gold);
+        color: var(--black);
+        border: none;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+        cursor: pointer;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 1000;
+    `;
+    
+    document.body.appendChild(scrollToTopBtn);
+    
+    scrollToTopBtn.addEventListener('click', scrollToTop);
+    
+    // Show/hide button based on scroll position
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            scrollToTopBtn.style.opacity = '1';
+            scrollToTopBtn.style.visibility = 'visible';
+        } else {
+            scrollToTopBtn.style.opacity = '0';
+            scrollToTopBtn.style.visibility = 'hidden';
+        }
+    });
+});
+
+// Preloader
+window.addEventListener('load', () => {
+    const preloader = document.querySelector('.preloader');
+    if (preloader) {
+        preloader.style.opacity = '0';
+        setTimeout(() => {
+            preloader.style.display = 'none';
+        }, 500);
+    }
+});
+
+// Lazy loading for images
+document.addEventListener('DOMContentLoaded', () => {
+    const images = document.querySelectorAll('img[data-src]');
+    
+    const imageObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src;
+                img.classList.remove('lazy');
+                imageObserver.unobserve(img);
+            }
+        });
+    });
+    
+    images.forEach(img => {
+        imageObserver.observe(img);
+    });
+});
+
+// Analytics tracking (placeholder)
+function trackEvent(eventName, eventData) {
+    console.log(`Event: ${eventName}`, eventData);
+    // Add your analytics tracking code here
+}
+
+// Track booking attempts
+document.addEventListener('DOMContentLoaded', () => {
+    const bookingButtons = document.querySelectorAll('a[href="booking.html"]');
+    bookingButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            trackEvent('booking_click', {
+                source: button.closest('section')?.className || 'unknown'
+            });
+        });
+    });
+});

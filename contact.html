@@ -1,1 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - TIMO'S Makeup & Nails Spa</title>
+    <meta name="description" content="Get in touch with TIMO'S Makeup & Nails Spa in Eldoret. Visit us at Safaricom House or call +254 714 109550 for appointments.">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="https://i.pinimg.com/564x/8c/65/2a/8c652a0c8a5e5e4c5f6b9c3e8d7a9c1b.jpg" alt="TIMO'S Logo">
+                <span>TIMO'S</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="testimonials.html" class="nav-link">Reviews</a></li>
+                <li><a href="contact.html" class="nav-link active">Contact</a></li>
+                <li><a href="booking.html" class="nav-link book-now-btn">Book Now</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
 
+    <!-- Hero Section -->
+    <section class="page-hero">
+        <div class="hero-background">
+            <img src="https://i.pinimg.com/564x/6a/7b/8c/6a7b8c9d0e1f2a3b4c5d6e7f8a9b0c1d.jpg" alt="Contact Us">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <h1>Contact Us</h1>
+            <p>We'd love to hear from you. Get in touch with our team today!</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>Get in Touch</h2>
+                    <p>Ready to book your appointment or have questions about our services? We're here to help!</p>
+                    
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="method-info">
+                                <h3>Visit Our Spa</h3>
+                                <p>Safaricom House, Eldoret<br>Basement Level</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="method-info">
+                                <h3>Call Us</h3>
+                                <p>+254 714 109550</p>
+                                <span>Available 7 days a week</span>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fab fa-instagram"></i>
+                            </div>
+                            <div class="method-info">
+                                <h3>Social Media</h3>
+                                <p>@timos.makeupnails</p>
+                                <span>Follow us for updates</span>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-method">
+                            <div class="method-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="method-info">
+                                <h3>Business Hours</h3>
+                                <p>Monday - Sunday<br>8:00 AM - 8:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-section">
+                    <h2>Send us a Message</h2>
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="name" name="name" required>
+                            <label for="name">Your Name</label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" required>
+                            <label for="email">Email Address</label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="tel" id="phone" name="phone" required>
+                            <label for="phone">Phone Number</label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <select id="subject" name="subject" required>
+                                <option value="">Select Subject</option>
+                                <option value="booking">Booking Inquiry</option>
+                                <option value="services">Service Information</option>
+                                <option value="complaint">Complaint</option>
+                                <option value="compliment">Compliment</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <label for="subject">Subject</label>
+                        </div>
+                        
+                        <div class="form-group">
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                            <label for="message">Your Message</label>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Map -->
+    <section class="location-map">
+        <div class="container">
+            <h2 class="section-title">Find Us</h2>
+            <div class="map-container">
+                <div class="map-placeholder">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>TIMO'S Makeup & Nails Spa</h3>
+                    <p>Safaricom House, Eldoret - Basement</p>
+                    <p>Conveniently located in the heart of Eldoret</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How do I book an appointment?</h3>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>You can book an appointment by calling us at +254 714 109550, visiting our spa directly, or using our online booking form on the website.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What are your operating hours?</h3>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We are open Monday through Sunday from 8:00 AM to 8:00 PM. We're here to serve you 7 days a week!</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Do you accept walk-ins?</h3>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>While we accept walk-ins based on availability, we recommend booking an appointment to ensure you get your preferred time slot.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What payment methods do you accept?</h3>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We accept cash, mobile money (M-Pesa), and bank cards for your convenience.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Do you offer group bookings?</h3>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! We offer special group packages for bridal parties, events, and celebrations. Contact us to discuss your needs.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What should I bring to my appointment?</h3>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Just bring yourself! We provide all necessary materials and products. For nail services, please remove any existing polish beforehand.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>TIMO'S Makeup & Nails Spa</h3>
+                    <p>Your premier destination for beauty and wellness in Eldoret. Step into elegance, step out glowing.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="booking.html">Book Now</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Safaricom House, Eldoret</p>
+                    <p><i class="fas fa-phone"></i> +254 714 109550</p>
+                    <p><i class="fab fa-instagram"></i> @timos.makeupnails</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 TIMO'S Makeup & Nails Spa. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

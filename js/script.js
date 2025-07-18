@@ -83,9 +83,30 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
             
-            // Simulate form submission
-            showNotification('Thank you for your message! We will get back to you soon.', 'success');
-            this.reset();
+            const submitButton = this.querySelector('button[type="submit"]');
+            submitButton.disabled = true;
+            submitButton.textContent = 'Sending...';
+
+            fetch('php/contact_form.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(result => {
+                if (result.success) {
+                    showNotification(result.message, 'success');
+                    contactForm.reset();
+                } else {
+                    showNotification(result.message, 'error');
+                }
+            })
+            .catch(error => {
+                showNotification('An error occurred. Please try again.', 'error');
+            })
+            .finally(() => {
+                submitButton.disabled = false;
+                submitButton.textContent = 'Send Message';
+            });
         });
     }
     
@@ -122,9 +143,36 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
             
-            // Simulate booking submission
-            showNotification('Your appointment has been booked successfully! We will contact you to confirm.', 'success');
-            this.reset();
+            const submitButton = this.querySelector('button[type="submit"]');
+            submitButton.disabled = true;
+            submitButton.textContent = 'Booking...';
+
+            fetch('php/submit_booking.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(result => {
+                if (result.success) {
+                    showNotification(result.message, 'success');
+                    bookingForm.reset();
+                    document.getElementById('booking-success').style.display = 'block';
+                    document.getElementById('booking-error').style.display = 'none';
+                } else {
+                    showNotification(result.message, 'error');
+                    document.getElementById('booking-error').style.display = 'block';
+                    document.getElementById('booking-success').style.display = 'none';
+                }
+            })
+            .catch(error => {
+                showNotification('An error occurred. Please try again.', 'error');
+                document.getElementById('booking-error').style.display = 'block';
+                document.getElementById('booking-success').style.display = 'none';
+            })
+            .finally(() => {
+                submitButton.disabled = false;
+                submitButton.textContent = 'Book Appointment';
+            });
         });
     }
     
